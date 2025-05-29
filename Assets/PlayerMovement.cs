@@ -102,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.J))
 		{
 			OnJumpUpInput();
+			
 		}
 		#endregion
 
@@ -112,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
 			if (Physics2D.OverlapBox(_groundCheckPoint.position, _groundCheckSize, 0, _groundLayer) && !IsJumping) //checks if set box overlaps with ground
 			{
 				LastOnGroundTime = Data.coyoteTime; //if so sets the lastGrounded to coyoteTime
+                animator.SetBool("isJumping", false);
             }		
 
 			//Right Wall Check
@@ -133,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
 		if (IsJumping && RB.linearVelocityY < 0)
 		{
 			IsJumping = false;
+			
 
 			if(!IsWallJumping)
 				_isJumpFalling = true;
@@ -339,8 +342,9 @@ public class PlayerMovement : MonoBehaviour
 			force -= RB.linearVelocityY;
 
 		RB.AddForce(Vector2.up * force, ForceMode2D.Impulse);
-		#endregion
-	}
+        animator.SetBool("isJumping", true);
+        #endregion
+    }
 
 	private void WallJump(int dir)
 	{
