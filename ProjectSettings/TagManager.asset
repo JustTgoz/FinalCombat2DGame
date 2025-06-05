@@ -11,8 +11,8 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 521757649
     locked: 0
+  - name: BGWall
+    uniqueID: 3706353383
+    locked: 0
   - name: BGDecor
     uniqueID: 4004584525
     locked: 0
@@ -52,6 +55,9 @@ TagManager:
     locked: 0
   - name: Level
     uniqueID: 4038524267
+    locked: 0
+  - name: 
+    uniqueID: 1081767415
     locked: 0
   m_RenderingLayers:
   - Default
