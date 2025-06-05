@@ -24,7 +24,7 @@ public class PlayerMelee : MonoBehaviour
     {
         if (cooldownTimer <= 0)
         {
-            if (Input.GetKey(KeyCode.K))
+            if (Input.GetKey(KeyCode.C))
             {
                 // Example of playing attack animation
                 animator.SetTrigger("Melee");
